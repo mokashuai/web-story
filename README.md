@@ -1,2 +1,1 @@
-# web-story
-web-story
+# beautiful
