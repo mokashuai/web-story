@@ -37,6 +37,6 @@ export default {
   alias: {
     '@': resolve('src'),
     'utils': resolve('src', 'utils'),
-    'components': resolve('src', 'utils', 'components'),
+    'components': resolve('src', 'components'),
   },
 }

@@ -2,15 +2,15 @@ import S from './service'
 export default {
   namespace: 'mainPage',
   state: {
+    total: 100,
     list: [],
-    total: 0,
+    total: 0
   },
   reducers: {
     SET_LIST(state, { data={} }) {
       const { list=[], total=0 } = data;
       return { ...state, list, total };
     },
-
   },
   effects: {
     // *获得员工列表
