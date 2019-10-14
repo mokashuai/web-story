@@ -42,4 +42,13 @@ instance.interceptors.response.use(
   },
 );
 
-export default instance;
+export default ({body={}, url, method='get', option={}}) => {
+  if(method === 'get'){
+    return instance.get(url, {
+      params: body
+    });
+  }
+  return instance({
+    method, url, data: body, ...option
+  })
+};

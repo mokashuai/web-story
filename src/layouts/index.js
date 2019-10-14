@@ -1,9 +1,9 @@
 import './index.less';
-
+import Header from './Header'
 function BasicLayout(props) {
   return (
     <div className='html-layout'>
-      <h1 className='html-title'>Yay! Welcome to umi!</h1>
+      <Header title='Welcome to beautiful girl !' />
       {props.children}
     </div>
   );

@@ -4,11 +4,13 @@ export default {
   namespace: 'global',
 
   state: {
-
+    currentPage: 1,
   },
 
   reducers: {
-    
+    SET_CURRENT_PAGE(state, { payload }){
+      return { ...state, currentPage: payload };
+    }
   },
 
   effects: {

@@ -4,7 +4,6 @@ export default {
   state: {
     total: 100,
     list: [],
-    total: 0
   },
   reducers: {
     SET_LIST(state, { data={} }) {
@@ -13,7 +12,7 @@ export default {
     },
   },
   effects: {
-    // *获得员工列表
+    // *获得列表
     *getList({ payload }, { call, put }) {
       const data = yield call(S.getList, payload);
       yield put({

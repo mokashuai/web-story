@@ -4,32 +4,31 @@ import connect from './connect'
 import { Pagination, Badge } from 'antd'
 import Drawer from 'components/Drawer'
 import Detail from './Detail'
-
-export default connect(function({list, total, getList, routerJump, getDetail}) {
-  const [currentPage, setCurrentPage] = useState(1);
+const pageSize = 35;
+export default connect(function({list, total, currentPage, setCurrentPage, getList, routerJump, getDetail}) {
   const [visible, setVisible] = useState(false);
   const [id, setCurrentId] = useState(null);
 
   const fetchList = useCallback(() => {
-    getList({pageSize: 35, pageIndex: currentPage});
-  }, [currentPage]);
+    getList({pageSize, pageIndex: currentPage});
+  }, [currentPage, getList]);
 
   useEffect(fetchList, [currentPage]);
 
   const onError = useCallback(e => e.target.src = default_avater, []);
 
-  const gotoDetail = useCallback(id => e => routerJump(`/personal/${id}`), []);
+  const gotoDetail = useCallback(id => e => routerJump(`/personal/${id}`), [routerJump]);
 
   const openDrawer = useCallback(id => e => {
     setVisible(true);
     setCurrentId(id);
   }, []);
-  
+
   const closeDrawer = useCallback(e => {
     setVisible(false);
     setCurrentId(null);
   }, []);
-  
+
   return (<>
     <div className='html'>
       <div className='body'>
@@ -50,8 +49,8 @@ export default connect(function({list, total, getList, routerJump, getDetail}) {
         }
         </div>
       </div>
-      <div style={{marginBottom: '10px'}}>,
-        <Pagination onChange={setCurrentPage} total={total} current={currentPage} />
+      <div style={{margin: '15px'}}>
+        <Pagination pageSize={pageSize} onChange={setCurrentPage} total={total} current={currentPage} size='small' />
       </div>
     </div>
 

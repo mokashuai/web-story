@@ -4,12 +4,20 @@
     font-family: Georgia, sans-serif;
   }
   &-title {
-    /* font-size: 2.5rem; */
+    display: flex;
     font-weight: normal;
-    letter-spacing: -1px;
-    background: darkslateblue;
+    padding: 0 1rem;
     height: 55px;
-    color: white;
+    // color: white;
+    line-height: 55px;
     margin: 0;
+    border-bottom: 1px solid #999;
+    .log-in-out{
+      flex-grow: 1;
+      text-align: right;
+      .ant-dropdown-link{
+        font-size: 14px;
+      }
+    }
   }
 }
