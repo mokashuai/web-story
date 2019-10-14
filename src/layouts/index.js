@@ -1,12 +1,13 @@
+import React from 'react'
 import './index.less';
 import Header from './Header'
-function BasicLayout(props) {
+
+export default function BasicLayout({location, children}) {
+  const hideHeader = ["/login", "/login/regist"].includes(location.pathname);
   return (
     <div className='html-layout'>
-      <Header title='Welcome to beautiful girl !' />
-      {props.children}
+      {!hideHeader && <Header title='Welcome to beautiful girl !' />}
+      {children}
     </div>
   );
 }
-
-export default BasicLayout;

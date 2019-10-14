@@ -1,0 +1,112 @@
+.login{
+	position:absolute;
+	background:#FAFBFC;
+	width:100%;
+	height:100%;
+	background:#FAFBFC url('../../assets/t0144a88fc1f4e51294.jpg') top center no-repeat;
+	background-size:cover;
+	animation:loadingBg 1.5s;
+	-webkit-animation:loadingBg 1.5s;
+  .loginForm {
+    position:absolute;
+    top:186px;
+    right:250px;
+    background:rgba(255,255,255,1);
+    box-shadow:6px 6px 30px 0px rgba(227,227,227,0.5),-6px -6px 30px 0px rgba(230,230,230,0.5);
+    width:443px;
+    height:428px;
+    border-radius:20px;
+    overflow:hidden;
+    .ant-input-affix-wrapper .ant-input-prefix{
+      background:rgb(232, 240, 254);
+    }
+  }
+  .formArea{
+    padding:40px;
+  }
+  .formArea h1{
+    color:#5C6170;
+    font-size:30px;
+    margin-bottom:40px;
+  }
+  .loginFormButton{
+    width:120px;
+    margin:10px 125px 0;
+  }
+  .findPw{
+    color:#0B8CF6;
+    font-size:14px;
+    cursor:pointer;
+  }
+  .arrow{
+    position:absolute;
+    top:226px;
+    right:715px;
+    background:#fff;
+    z-index:9999;
+    cursor:pointer;
+    position:absolute;
+    border-radius:50%;
+    width:32px;
+    height:32px;
+    box-shadow:0px 2px 20px 0px rgba(135,135,135,0.5);
+  }
+  .arrow div{
+        content: "";
+        width: 8px;
+      height: 8px;
+      border-top: 1px solid #656565;
+      border-right: 1px solid #656565;
+      -ms-transform: rotate(225deg);
+      transform: rotate(225deg);
+      -webkit-transform: rotate(225deg);
+      margin: 12px auto;
+  }
+  .pwul{
+    overflow:hidden;
+  }
+  .pwul li{
+    float:left;
+    color:#A5AECA;
+    font-size:13px;
+    width:170px;
+    margin-left:10px;
+  }
+  .pwul li i{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    background:#A5AECA;
+    border-radius:50%;
+    margin-right:5px;
+  }
+  .pwul li i.greens{
+    background:#01BA61;
+  }
+  .pwul li i.reds{
+    background:#F16262;
+  }
+}
+@keyframes loadingBg{
+	0% {
+    opacity:0;
+    background:#FAFBFC;
+  }
+	100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes loadingBg{
+	0% {
+    opacity:0;
+    background:#FAFBFC;
+  }
+	100% {
+    opacity:1;
+  }
+}
+.login-redirect{
+  text-align: center;
+  display: block;
+}

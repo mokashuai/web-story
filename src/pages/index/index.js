@@ -15,6 +15,12 @@ export default connect(function({list, total, currentPage, setCurrentPage, getLi
 
   useEffect(fetchList, [currentPage]);
 
+  useEffect(() => {
+    if(localStorage.getItem('isLogin') !== '1'){
+      routerJump('/login');
+    }
+  }, []);
+
   const onError = useCallback(e => e.target.src = default_avater, []);
 
   const gotoDetail = useCallback(id => e => routerJump(`/personal/${id}`), [routerJump]);

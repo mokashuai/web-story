@@ -36,6 +36,7 @@ export default {
   disableCSSModules: true,
   alias: {
     '@': resolve('src'),
+    'assets': resolve('src', 'assets'),
     'utils': resolve('src', 'utils'),
     'components': resolve('src', 'components'),
   },
