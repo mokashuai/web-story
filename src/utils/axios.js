@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { router } from 'umi'
 
 const instance = axios.create({
   baseURL: process.env.apiUrl,
@@ -29,7 +29,10 @@ instance.interceptors.request.use(config => {
 instance.interceptors.response.use(
   response => {
     if (response.status === 200) {
-      return response.data;
+      if(response.data.code != 200){
+        return router.push('/login');
+      }
+      return response.data.data;
     } else {
       console.error(response.data.msg);
       return Promise.reject(response);

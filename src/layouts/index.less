@@ -2,21 +2,24 @@
 .html {
   &-layout {
     font-family: Georgia, sans-serif;
+    min-width: 900px;
   }
   &-title {
     display: flex;
     font-weight: normal;
     padding: 0 1rem;
     height: 55px;
-    // color: white;
     line-height: 55px;
     margin: 0;
     border-bottom: 1px solid #999;
     .log-in-out{
+      font-size: 14px;
       flex-grow: 1;
       text-align: right;
       .ant-dropdown-link{
-        font-size: 14px;
+        button{
+          width: 120px;
+        }
       }
     }
   }

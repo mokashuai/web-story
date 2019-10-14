@@ -6,7 +6,7 @@ export default {
 
   },
   reducers: {
-    setTitle(state, { payload: res }) {
+    setUserList(state, { payload: res }) {
       return {
         ...state,
         title: res
@@ -17,15 +17,11 @@ export default {
   effects: {
     // *获得员工列表
     *getUserList({ payload }, { call, put }) {
-      try {
-        var data = yield call(S.getUserList, payload);
-        if (data.code === 200) {
-          yield put({
-            type: 'setUserList',
-            payload: data.data.data
-          });
-        }
-      } catch (error) {}
+      const data = yield call(S.getUserList, payload);
+      yield put({
+        type: 'setUserList',
+        payload: data
+      });
     },
   }
 };

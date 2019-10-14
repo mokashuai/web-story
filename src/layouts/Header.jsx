@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {  Menu, Dropdown, Icon } from 'antd'
+import React from 'react'
+import {  Menu, Dropdown, Icon, Button } from 'antd'
 import { router } from 'umi'
 
 const push = payload => {
@@ -25,9 +25,11 @@ export default function Header({title}){
   return <h1 className='html-title'>
     <span>{title}</span>
     <span className='log-in-out'>
-      <Dropdown overlay={<Overlay />}>
+      <a onClick={e => router.push('/information')}>个人中心</a>
+      &nbsp;&nbsp;
+      <Dropdown overlay={<Overlay />} placement="bottomCenter" overlayStyle={{boxShadow: '0 0 10px 1px #eee'}}>
         <a className="ant-dropdown-link">
-          操作 <Icon type="down" />
+          更多操作
         </a>
       </Dropdown>
     </span>

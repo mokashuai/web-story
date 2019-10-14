@@ -79,7 +79,7 @@ class NormalLoginForm extends Component {
         <div className='loginForm'>
           <Carousel ref={node => (this.carousel = node)} dots={false}>
             <div>
-              <Form onSubmit={this.handleSubmit} id="loginForm">
+              <Form onSubmit={this.handleSubmit}>
                 <div className='formArea'>
                   <h1>美丽传说</h1>
                   <Form.Item>
@@ -94,7 +94,6 @@ class NormalLoginForm extends Component {
                     })(
                       <Input
                         prefix={<Icon type="user" style={{ color: '#0C8CF6' }} />}
-                        id="userName"
                         placeholder="请输入邮箱"
                       />
                     )}
@@ -105,7 +104,6 @@ class NormalLoginForm extends Component {
                     })(
                       <Input.Password
                         prefix={<Icon type="lock" style={{ color: '#0C8CF6' }} />}
-                        id="password"
                         type="password"
                         placeholder="请输入密码"
                       />
@@ -120,7 +118,7 @@ class NormalLoginForm extends Component {
                     }
                   </Form.Item>
                   <Form.Item>
-                    <Button type="blue" htmlType="submit" className='loginFormButton'>
+                    <Button type="primary" htmlType="submit" className='loginFormButton'>
                       {isRegist && '注册并'}登录
                     </Button>
                     {
@@ -131,7 +129,7 @@ class NormalLoginForm extends Component {
               </Form>
             </div>
             <div>
-              <Form onSubmit={this.handleSubmit2} id="loginForm2">
+              <Form onSubmit={this.handleSubmit2}>
                 <div className='formArea'>
                   <h1>找回密码</h1>
                   {findPw2.sended ? (
@@ -145,7 +143,7 @@ class NormalLoginForm extends Component {
                       <p>我们将会给您的邮箱发送重置密码的邮件</p>
                     </div>
                   )}
-                  {findPw2.sended === true ? null : (
+                  {findPw2.sended ? null : (
                     <Form.Item>
                       {getFieldDecorator('userName2', {
                         rules: [
@@ -158,16 +156,15 @@ class NormalLoginForm extends Component {
                       })(
                         <Input
                           prefix={<Icon type="mail" style={{ color: '#0C8CF6' }} />}
-                          id="userName2"
                           placeholder="请输入邮箱"
                         />
                       )}
                     </Form.Item>
                   )}
                   <Form.Item>
-                    {findPw2.sended === true ? (
+                    {findPw2.sended ? (
                       <Button
-                        type="blue"
+                        type="primary"
                         className='loginFormButton'
                         onClick={this.previous}
                         style={{ marginTop: `145px` }}
@@ -176,7 +173,7 @@ class NormalLoginForm extends Component {
                       </Button>
                     ) : (
                       <Button
-                        type="blue"
+                        type="primary"
                         htmlType="submit"
                         className='loginFormButton'
                         style={{ marginTop: '60px' }}
