@@ -1,4 +1,4 @@
 import R from 'utils/axios'
 export default {
-	list: R.list
+	getDetail: body => R({url: '/detail', body}),
 }

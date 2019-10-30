@@ -2,7 +2,7 @@ import { connect } from 'dva';
 import { getDetail } from './service'
 const mapStateToProps = ({mainPage, global}) => ({
   total: mainPage.total,
-  list: mainPage.list.concat(mainPage.list),
+  list: mainPage.list,
   currentPage: global.currentPage
 });
 

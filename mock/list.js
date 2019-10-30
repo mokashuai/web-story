@@ -1,90 +1,18 @@
+import Mock from 'mockjs'
+const Random = Mock.Random;
+
 export default {
-  '/list': {
+  'GET /list': Mock.mock({
     code: 200,
     msg: '',
     data: {
-      total: 16,
-      list: [{
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dmfd/400_300_/t01ed3026fc8c600fcb.gif',
-        age: 19,
-        id: 1
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dmfd/420_627_/t01aefd0c08ff2f8140.jpg',
-        age: 19,
-        id: 2
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dmfd/365_365_/t019010d2daa27aab7d.png',
-        age: 19,
-        id: 3
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dmfd/420_207_/t01cabe2d0967540783.jpg',
-        age: 19,
-        id: 4
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dmfd/417_417_/t016e88daea760db87d.jpg',
-        age: 19,
-        id: 5
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dmfd/365_259_/t01ce54ac5db877a4f7.jpg',
-        age: 19,
-        id: 6
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/420_207_/t012bcaebc478144049.jpg',
-        age: 19,
-        id: 7
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/420_207_/t012bcaebc478144049.jpg',
-        age: 19,
-        id: 8
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/420_207_/t01ca7b541dfc054160.jpg',
-        age: 19,
-        id: 9
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/664_417_/t01d9bf48a9233e9f22.jpg',
-        age: 19,
-        id: 10
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/420_207_/t016c5c3b0ee41dcb44.jpg',
-        age: 19,
-        id: 11
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/501_207_/t017f5cc2c31f45573d.jpg',
-        age: 19,
-        id: 12
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/501_207_/t01c8f6deb0f2c3712d.jpg',
-        age: 19,
-        id: 13
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/502_207_/t015a0462ef5f9cacf3.jpg',
-        age: 19,
-        id: 14
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/420_207_/t01a414710a61a818cd.jpg',
-        age: 19,
-        id: 15
-      }, {
-        name: 'w让国人',
-        avatar: 'https://p.ssl.qhimg.com/dm/420_207_/t0157b8335f54ce6240.png',
-        age: 19,
-        id: 16
+      total: 56,
+      'list|56': [{
+        'name|2-3': Random.cword('指示单词中字符的个数默认值为之间的随机数', 4, 1),
+        'avatar': '@image',
+        'age|19-30': 19,
+        'id|+1': 1
       }]
     }
-  }
+  })
 };
