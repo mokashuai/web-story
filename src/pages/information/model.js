@@ -3,30 +3,33 @@ export default {
   namespace: 'information',
   state: {
     information: {
-      name: '小清新',
-      gender: 1,
-      birthday: '1990-12-11',
-      address: {
-        provinde: 1,
-        city: 1,
-        county: 1,
-      },
-      job: 'IT',
-      signature: '虚心使人进步，骄傲使人落后',
-      remark: '备注'
     },
-    pictures: [{
-      id: 1,
-      url: 'https://qlogo2.store.qq.com/qzone/1074777053/1074777053/100?1428715949'
-    }, {
-      id: 2,
-      url: 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=3353220795,1735262926&fm=85&s=F61014C74A523DDC6C29993C03001048'
-    },]
+    pictures: []
   },
   reducers: {
     SET_INFORMATION(state, { payload }) {
       const { information={}, pictures=[] } = payload;
       return { ...state, information, pictures }
+    },
+    ONCHANGE_PICTURE(state, { payload }){
+      const { id, type, url } = payload;
+      
+      if(type === 'collect'){
+        const collect = state.information.collect;
+        collect.push(id);
+        const information = {...state.information, collect};
+        return { ...state, information };
+      }
+      
+      let pictures;
+      if(type === 'remove'){
+        pictures = state.pictures.filter(({id: ID}) => ID !== id);
+      }
+      if(type === 'edit'){
+        pictures = state.pictures.map(each => each.id === id ? {...each, url} : each);
+      }
+      
+      return { ...state, pictures };
     }
   },
   effects: {

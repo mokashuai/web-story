@@ -8,7 +8,7 @@ const mapStateToProps = ({information}) => ({
 const mapDispatchToProps = dispatch => ({
   getInformation: payload =>  dispatch({type: 'information/getInformation', payload}),
   routerJump: payload =>  dispatch({type: 'global/routerJump', payload}),
-
+  onChangePicture: payload =>  dispatch({type: 'information/ONCHANGE_PICTURE', payload}),
 });
 
 export default connect(
