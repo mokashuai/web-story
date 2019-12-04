@@ -5,7 +5,9 @@ import OperateBox from './OperateBox'
 
 export default connect(function Information({getInformation, information, pictures, onChangePicture}){
 
-  useEffect(getInformation, [])
+  useEffect(() => {
+    getInformation();
+  }, [])
 
   const onCollect = useCallback(id => onChangePicture({type: 'collect', id}), []);
   const onEdit = useCallback((id, { url }) => onChangePicture({type: 'edit', id, url}), []);
